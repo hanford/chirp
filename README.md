@@ -9,7 +9,7 @@
 <br />
 <br />
 
-![preview](https://github.com/hanford/twitter-desktop/blob/master/preview.jpg)
+![preview](https://github.com/hanford/chirp/blob/master/preview.jpg)
 
 Questions? Feedback? [Please let me know](https://github.com/hanford/twitter-desktop/issues/new)
 
