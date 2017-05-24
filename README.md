@@ -5,7 +5,16 @@
   <br />
   <div>Use the mobile twitter app from the convenience of a desktop application, works on Mac, Linux and windows.</div>
   <br />
-  <a href='https://jackhanford.com/chirp'>Download Page</a>
+  <a href='https://jackhanford.com/chirp'>Landing Page</a>
+  <br />
+  <br />
+  Download now!
+  <br />
+  - <a href='https://jackhanford.com/chirp'>Mac</a>
+  <br />
+  - <a href='https://file-cluhollhkd.now.sh/linux.zip'>Linux</a>
+  <br />
+  - <a href='https://file-ztvyykkdka.now.sh/windows.zip'>Windows</a>
 </p>
 
 <br />
