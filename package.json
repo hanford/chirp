@@ -11,7 +11,7 @@
   "devDependencies": {
     "electron-osx-sign": "~0.4.5",
     "electron-packager": "~8.6.0",
-    "electron-rebuild": "^1.5.11"
+    "electron-rebuild": "~1.5.11"
   },
   "scripts": {
     "electron": "electron",
@@ -23,6 +23,7 @@
   "dependencies": {
     "electron": "~1.7.1",
     "electron-config": "~1.0.0",
+    "electron-google-analytics": "~0.0.16",
     "electron-spellchecker": "~1.0.8"
   }
 }

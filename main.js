@@ -19,10 +19,10 @@ function createWindow() {
     slashes: true
   }))
 
-    //mainWindow.openDevTools();
+    mainWindow.openDevTools()
     mainWindow.on('closed', () => mainWindow = null)
 
-    chirpMenu();
+    chirpMenu()
   }
 
   app.on('ready', createWindow)
@@ -134,5 +134,5 @@ function createWindow() {
     ]
   }]
 
-  Menu.setApplicationMenu( Menu.buildFromTemplate(topBarMenu))
+  Menu.setApplicationMenu(Menu.buildFromTemplate(topBarMenu))
 }
