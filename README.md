@@ -1,7 +1,8 @@
 <h1 align='center'>Chirp 🐦</h1>
-<h2 align='center' style='margin-top:0;'>Desktop twitter app</h2>
 
 <p align='center'>
+  <b>Desktop twitter app</b>
+  <br />
   <div>Use the mobile twitter app from the convenience of a desktop application, works on Mac, Linux and windows.</div>
   <br />
   <a href='https://jackhanford.com/chirp'>Download Page</a>
