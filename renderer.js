@@ -5,6 +5,7 @@ const shell = remote.shell;
 
 webview.addEventListener('dom-ready', () => {
     webview.openDevTools();
+    webview.insertCSS("html{overflow-x:hidden;}")
 })
 
 //allow links to open externally
