@@ -4,7 +4,7 @@ const { remote, ipcRenderer } = require('electron')
 const shell = remote.shell;
 
 webview.addEventListener('dom-ready', () => {
-    webview.openDevTools();
+    //webview.openDevTools();
     webview.insertCSS("html{overflow-x:hidden;}")
 })
 
