@@ -4,17 +4,11 @@ const url = require('url')
 const config = require('./config')
 
 function createWindow() {
-    var vib = "light"
-
-    if(config.get("vibrancy")){
-        var vib = "dark"
-    }
-
     mainWindow = new BrowserWindow({
         width: 375,
         height: 667,
-        vibrancy: vib,
-        autoHideMenuBar: config.get("hideMenuBar"),
+        vibrancy: "light",
+        autoHideMenuBar: true,
         alwaysOnTop: config.get("alwaysOnTop")
     })
 
@@ -136,15 +130,6 @@ function chirpMenu(){
                     click(){
                         mainWindow.setAlwaysOnTop(!config.get('alwaysOnTop'))
                         config.set("alwaysOnTop", mainWindow.isAlwaysOnTop())
-                    }
-                },
-                {
-                    label: 'Toggle dark vibrancy',
-                    accelerator: 'Cmd+Shift+V',
-                    visible:  process.platform === 'win32',
-                    click(){
-                        mainWindow.setVibrancy(!config.get('vibrancy'))
-                        config.set("vibrancy", !config.get('vibrancy'))
                     }
                 }
             ]
