@@ -1,0 +1,23 @@
+{
+  "name": "chirp-client",
+  "productName": "Chirp",
+  "version": "0.1.0",
+  "main": "main.js",
+  "author": {
+    "name": "Jack Hanford",
+    "email": "jackhanford@gmail.com",
+    "url": "https://jackhanford.com"
+  },
+  "devDependencies": {
+    "electron-packager": "~8.6.0"
+  },
+  "scripts": {
+    "electron": "electron",
+    "start": "npm run electron .",
+    "electron-rebuild": "./node_modules/.bin/electron-rebuild",
+    "build": "electron-packager . Chirp --platform=all --icon=./icon/icon.icns --out=./release-builds/ --overwrite"
+  },
+  "dependencies": {
+    "electron": "~1.7.1"
+  }
+}
