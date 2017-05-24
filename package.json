@@ -9,8 +9,9 @@
     "url": "https://jackhanford.com"
   },
   "devDependencies": {
+    "electron-osx-sign": "~0.4.5",
     "electron-packager": "~8.6.0",
-    "electron-osx-sign": "~0.4.5"
+    "electron-rebuild": "^1.5.11"
   },
   "scripts": {
     "electron": "electron",
@@ -20,6 +21,8 @@
     "build": "electron-packager . Chirp --platform=all --icon=./icon/icon.icns --out=./release-builds/ --overwrite --app-bundle-id=\"com.jackhanford.chirp\""
   },
   "dependencies": {
-    "electron": "~1.7.1"
+    "electron": "~1.7.1",
+    "electron-config": "^1.0.0",
+    "electron-spellchecker": "^1.0.8"
   }
 }
