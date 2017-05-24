@@ -10,11 +10,11 @@
   <br />
   Download now!
   <br />
-  - <a href='https://jackhanford.com/chirp'>Mac</a>
+  - <a href='https://file-skihftbnli.now.sh/Chirp-darwin-x64.zip'>Mac</a>
   <br />
-  - <a href='https://file-cluhollhkd.now.sh/linux.zip'>Linux</a>
+  - <a href='https://file-bxdmzaqkor.now.sh/Chirp-linux-x64.zip'>Linux</a>
   <br />
-  - <a href='https://file-ztvyykkdka.now.sh/windows.zip'>Windows</a>
+  - <a href='https://file-tfmmrxtwrd.now.sh/Chirp-win32-x64.zip'>Windows</a>
 </p>
 
 <br />

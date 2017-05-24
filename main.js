@@ -19,7 +19,7 @@ function createWindow() {
     slashes: true
   }))
 
-    mainWindow.openDevTools()
+    // mainWindow.openDevTools()
     mainWindow.on('closed', () => mainWindow = null)
 
     chirpMenu()
