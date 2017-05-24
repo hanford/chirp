@@ -1,7 +1,7 @@
 {
   "name": "chirp-client",
   "productName": "Chirp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "main.js",
   "author": {
     "name": "Jack Hanford",
