@@ -42,95 +42,73 @@ function createWindow() {
   function chirpMenu () {
     const topBarMenu = [{
       label: 'Chirp',
-      submenu: [
-      {
+      submenu: [{
         label: 'About',
         click(){
           shell.openExternal('https://jackhanford.com/chirp')
         }
-      },
-      {
+      }, {
         label: 'Get the latest update',
         click(){
           shell.openExternal('https://github.com/hanford/chirp/releases')
         }
-      },
-      {
+      }, {
         label: 'Submit a bug report',
         click(){
           shell.openExternal('https://github.com/hanford/chirp/issues')
         }
-      },
-      {
+      }, {
         role: 'quit'
-      }
-      ]
-    },
-    {
+      }]
+    }, {
       label: 'Edit',
-      submenu: [
-      {
+      submenu: [{
         role: 'undo'
-      },
-      {
+      }, {
         role: 'redo'
-      },
-      {
+      }, {
         type: 'separator'
-      },
-      {
+      }, {
         role: 'cut'
-      },
-      {
+      }, {
         role: 'copy'
-      },
-      {
+      }, {
         role: 'paste'
-      },
-      {
+      }, {
         role: 'pasteandmatchstyle'
-      },
-      {
+      }, {
         role: 'delete'
-      },
-      {
+      }, {
         role: 'selectall'
-      }
-      ]
-    },
-    {
+      }]
+    }, {
       label: 'View',
-      submenu: [
-      {
+      submenu: [{
         label: 'Reload',
         accelerator: 'CmdOrCtrl+R',
         click (item, focusedWindow) {
           if (focusedWindow) focusedWindow.reload()
         }
-    },
-    {
-      type: 'separator'
-    },
-    {
-      role: 'resetzoom'
-    },
-    {
-      role: 'zoomin'
-    },
-    {
-      role: 'zoomout'
-    },
-    {
-      type: 'separator'
-    },
-    {
-      label: 'Toggle always on top',
-      accelerator: 'CmdOrCtrl+Shift+A',
-      click(){
+      }, {
+        type: 'separator'
+      }, {
+        role: 'resetzoom'
+      }, {
+        role: 'zoomin'
+      }, {
+        role: 'zoomout'
+      }, {
+        type: 'separator'
+      }, {
+        label: 'Toggle always on top',
+        accelerator: 'CmdOrCtrl+Shift+A',
+        click () {
         mainWindow.setAlwaysOnTop(!config.get('alwaysOnTop'))
         config.set('alwaysOnTop', mainWindow.isAlwaysOnTop())
+        }
+      }, {
+        role: 'hide'
       }
-    }
     ]
   }]
 
