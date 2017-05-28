@@ -22,7 +22,7 @@
 
 ![preview](https://github.com/hanford/chirp/blob/master/preview.jpg)
 
-Questions? Feedback? [Please let me know](https://github.com/hanford/twitter-desktop/issues/new)
+Questions? Feedback? [Please let me know](https://github.com/hanford/chirp/issues/new)
 
 ## License (MIT)
 
