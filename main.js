@@ -6,7 +6,7 @@ const config = require('./config')
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 375,
+    width: 500,
     height: 667,
     vibrancy: 'light',
     autoHideMenuBar: true,
