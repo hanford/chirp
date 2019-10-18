@@ -6,9 +6,10 @@ const config = require('./config')
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 375,
+    width: 500,
     height: 667,
-    vibrancy: 'light',
+    icon: path.join(__dirname, './icon/icon.png'),
+    vibrancy: 'dark',
     autoHideMenuBar: true,
     alwaysOnTop: config.get('alwaysOnTop')
   })
