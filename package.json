@@ -21,7 +21,7 @@
     "build": "electron-packager . Chirp --platform=all --icon=./icon/icon.icns --out=./release-builds/ --overwrite --app-bundle-id=\"com.jackhanford.chirp\""
   },
   "dependencies": {
-    "electron": "~1.7.1",
+    "electron": "~9.4.0",
     "electron-config": "~1.0.0",
     "electron-google-analytics": "~0.0.16",
     "electron-spellchecker": "~1.0.8"
