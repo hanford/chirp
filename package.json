@@ -13,6 +13,7 @@
     "build": "electron-builder build"
   },
   "dependencies": {
+    "electron-context-menu": "^3.1.1",
     "electron-google-analytics": "^1.0.2"
   },
   "devDependencies": {
