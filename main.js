@@ -5,7 +5,6 @@ const contextMenu = require('electron-context-menu');
 const Analytics = require('electron-google-analytics')
 new Analytics.default('UA-45226320-3')
 
-
 function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 500,
@@ -20,7 +19,6 @@ function createWindow () {
     }
   })
   mainWindow.loadURL('https://twitter.com/home')
-
 
   tray = new Tray('./build/icons/icon.png')
   tray.setToolTip('Chirp')
