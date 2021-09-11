@@ -1,5 +1,8 @@
 name: Build Executable Files
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 on:
   workflow_dispatch:
 
