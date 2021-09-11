@@ -1,0 +1,69 @@
+name: Build Executable Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+
+    runs-on: macOS-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x] # Don't use v16, last time I checked there were a few issues with it
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+    - name: Save Files
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: app-macos
+        path: dist/
+    
+  build-lnx:
+
+    runs-on: ubuntu-latest # If you're interested in building RPM or Pacman files, GitHub only has Ubuntu as a distro option. You'll need to run a self-hosted runner: https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+    - name: Save Files
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: app-linux
+        path: dist/
+    
+  build-win:
+
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+    - name: Save Files
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: app-windows
+        path: dist/
+    
