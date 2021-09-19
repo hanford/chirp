@@ -29,6 +29,10 @@ function createWindow () {
     { 
       label: 'Hide',
       click: async() => {mainWindow.hide()}
+    },
+    { 
+      label: 'Show',
+      click: async() => {mainWindow.show()}
     }
   ])
   tray.setContextMenu(contextMenu)
