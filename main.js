@@ -20,7 +20,7 @@ function createWindow () {
   })
   mainWindow.loadURL('https://twitter.com/home')
 
-  tray = new Tray('./build/icons/icon.png')
+  tray = new Tray('./icon.png')
   tray.setToolTip('Chirp')
   tray.on('click', () => {
     mainWindow.show();
@@ -112,6 +112,4 @@ function createWindow () {
 app.whenReady().then(() => {createWindow()})
 app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy') // Twitter is blank in webview without this
 app.on('window-all-closed', () => {if (process.platform !== 'darwin') {app.quit()}})
-app.on('activate', () => {if (mainWindow === null) {createWindow()}})
 contextMenu({showSaveImageAs: true});
-
