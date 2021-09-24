@@ -14,8 +14,7 @@ function createWindow () {
     webPreferences: {
       webviewTag: true,
       nodeIntegration: true,
-      devTools: false,
-      nativeWindowOpen: true // Default changes to true in Electron 15
+      devTools: false
     }
   })
   mainWindow.loadURL('https://twitter.com/home')
