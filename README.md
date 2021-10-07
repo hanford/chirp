@@ -20,7 +20,7 @@
 <br />
 <br />
 
-![preview](https://github.com/hanford/chirp/blob/master/preview.jpg)
+![preview](https://i.imgur.com/xkq29H0.png)
 
 Questions? Feedback? [Please let me know](https://github.com/hanford/chirp/issues/new)
 

@@ -1,66 +1,61 @@
-const { app, BrowserWindow, Menu, shell } = require('electron')
+const {app, BrowserWindow, Menu, Tray, ipcMain, ipcRenderer, nativeImage} = require('electron')
 const path = require('path')
 const url = require('url')
+const contextMenu = require('electron-context-menu');
+const Analytics = require('electron-google-analytics')
+new Analytics.default('UA-45226320-3')
 
-const config = require('./config')
-
-function createWindow() {
-  mainWindow = new BrowserWindow({
+function createWindow () {
+  const mainWindow = new BrowserWindow({
     width: 500,
     height: 667,
-    icon: path.join(__dirname, './icon/icon.png'),
-    vibrancy: 'dark',
+    icon: path.join(__dirname, './build/icons/icon.png'),
     autoHideMenuBar: true,
-    alwaysOnTop: config.get('alwaysOnTop')
-  })
-
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
-
-    // mainWindow.openDevTools()
-    mainWindow.on('closed', () => mainWindow = null)
-
-    chirpMenu()
-  }
-
-  app.on('ready', createWindow)
-
-  app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-      app.quit()
+    webPreferences: {
+      webviewTag: true,
+      nodeIntegration: true,
+      devTools: false
     }
   })
+  mainWindow.loadURL('https://twitter.com/home')
 
-  app.on('activate', () => {
-    if (mainWindow === null) {
-      createWindow()
+  tray = new Tray('./icon.png')
+  tray.setToolTip('Chirp')
+  tray.on('click', () => {
+    mainWindow.show();
+  });
+  const contextMenu = Menu.buildFromTemplate([
+    { 
+      label: 'Hide',
+      click: async() => {mainWindow.hide()}
+    },
+    { 
+      label: 'Show',
+      click: async() => {mainWindow.show()}
     }
-  })
+  ])
+  tray.setContextMenu(contextMenu)
 
-  function chirpMenu () {
-    const topBarMenu = [{
-      label: 'Chirp',
-      submenu: [{
-        label: 'About',
-        click(){
-          shell.openExternal('https://jackhanford.com/chirp')
-        }
-      }, {
-        label: 'Get the latest update',
-        click(){
-          shell.openExternal('https://github.com/hanford/chirp/releases')
-        }
-      }, {
-        label: 'Submit a bug report',
-        click(){
-          shell.openExternal('https://github.com/hanford/chirp/issues')
-        }
-      }, {
-        role: 'quit'
-      }]
+  const topBarMenu = [{
+    label: 'Chirp',
+    submenu: [{
+      label: 'About',
+      click(){
+        shell.openExternal('https://jackhanford.com/chirp')
+      }
+    }, {
+      label: 'Get the latest update',
+      click(){
+        shell.openExternal('https://github.com/hanford/chirp/releases')
+      }
+    }, {
+      label: 'Submit a bug report',
+      click(){
+        shell.openExternal('https://github.com/hanford/chirp/issues')
+      }
+    }, {
+      role: 'quit'
+    }]
     }, {
       label: 'Edit',
       submenu: [{
@@ -100,18 +95,20 @@ function createWindow() {
         role: 'zoomout'
       }, {
         type: 'separator'
-      }, {
-        label: 'Toggle always on top',
-        accelerator: 'CmdOrCtrl+Shift+A',
-        click () {
-        mainWindow.setAlwaysOnTop(!config.get('alwaysOnTop'))
-        config.set('alwaysOnTop', mainWindow.isAlwaysOnTop())
-        }
-      }, {
-        role: 'hide'
       }
     ]
+  }, {
+    label: 'Window',
+    submenu: [{
+      label: 'Always on Top',
+      click() {mainWindow.setAlwaysOnTop(true, 'screen');}
+    }
+  ]
   }]
-
   Menu.setApplicationMenu(Menu.buildFromTemplate(topBarMenu))
 }
+
+app.whenReady().then(() => {createWindow()})
+app.commandLine.appendSwitch('disable-features', 'CrossOriginOpenerPolicy') // Twitter is blank in webview without this
+app.on('window-all-closed', () => {if (process.platform !== 'darwin') {app.quit()}})
+contextMenu({showSaveImageAs: true});
