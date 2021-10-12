@@ -10,11 +10,11 @@
   <br />
   Download now!
   <br />
-  - <a href='https://file-cjddyxvqbc.now.sh/Chirp-darwin-x64.zip'>Mac</a>
+  - <a href='https://github.com/hanford/chirp/suites/4014076500/artifacts/101365603'>Mac</a>
   <br />
-  - <a href='https://file-fevwnujbqw.now.sh/Chirp-linux-x64.zip'>Linux</a>
+  - <a href='https://github.com/hanford/chirp/suites/4014076500/artifacts/101365602'>Linux</a>
   <br />
-  - <a href='https://file-pwszcfrfqv.now.sh/Chirp-win32-x64.zip'>Windows</a>
+  - <a href='https://github.com/hanford/chirp/suites/4014076500/artifacts/101365604'>Windows</a>
 </p>
 
 <br />
